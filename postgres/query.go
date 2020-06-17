@@ -1,9 +1,15 @@
 package postgres
 
-var queryInsertNewEmployeeInfo = `
+var queryInsertEmployeeInfo = `
   INSERT INTO
-  ws_employee (name, age gender)
+  ws_employee (name, age, gender)
   VALUES ($1, $2, $3)
+`
+
+var queryGetTotalEmployees = `
+  SELECT
+  max(id) FROM
+  ws_employee
 `
 
 var queryInsertEmployeeDepartmentInfo = `
